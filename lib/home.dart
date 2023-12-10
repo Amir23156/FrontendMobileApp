@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:vitrine_project/navigationbar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,44 +17,20 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFD2B48C),
-        title: Text('Skill boost'),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Padding(
-              padding: const EdgeInsets.only(top: 8.0),
-              child: Image.asset(
-                'images/book.png',
-                height: 20,
-                width: 20,
-              ),
+        title:
+            Text('Skill boost', style: TextStyle(fontWeight: FontWeight.bold)),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Image.asset(
+              'images/Logoskillboost.png', // Replace with the actual path to your logo
+              width: 40,
+              height: 40,
             ),
-            label: 'Courses',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              color: Colors.black,
-            ),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.search,
-              color: Colors.black,
-            ),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-              color: Colors.black,
-            ),
-            label: 'Profile',
           ),
         ],
       ),
+      bottomNavigationBar: CustomBottomNavigationBar(),
       body: ListView(
         children: [
           Padding(

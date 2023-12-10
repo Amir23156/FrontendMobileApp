@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vitrine_project/home.dart';
+import 'package:vitrine_project/navigationbar.dart';
 import 'package:vitrine_project/shared/barre_de_recherche.dart';
 
 class UserProfile extends StatelessWidget {
@@ -21,42 +22,7 @@ class UserProfile extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Padding(
-              padding: const EdgeInsets.only(top: 8.0),
-              child: Image.asset(
-                'images/book.png',
-                height: 20,
-                width: 20,
-              ),
-            ),
-            label: 'Courses',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              color: Colors.black,
-            ),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.search,
-              color: Colors.black,
-            ),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-              color: Colors.black,
-            ),
-            label: 'Profile',
-          ),
-        ],
-      ),
+      bottomNavigationBar: CustomBottomNavigationBar(),
       body: Column(
         children: [
           Container(
@@ -191,7 +157,7 @@ class BoxWidget extends StatelessWidget {
       margin: EdgeInsets.all(8.0),
       width: 150.0, // Adjust the width of your box
       decoration: BoxDecoration(
-        color: Colors.blue, // Add your box color
+        color: Colors.white, // Add your box color
         borderRadius:
             BorderRadius.circular(10.0), // Adjust the radius as needed
       ),
@@ -228,7 +194,7 @@ class UserStatusLabel extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(8.0),
       decoration: BoxDecoration(
-        color: Colors.blue,
+        color: Colors.white,
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: Text(

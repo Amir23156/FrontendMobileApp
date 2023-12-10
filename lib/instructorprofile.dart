@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:vitrine_project/courses.dart';
 import 'package:vitrine_project/home.dart';
+import 'package:vitrine_project/navigationbar.dart';
 import 'package:vitrine_project/shared/barre_de_recherche.dart';
+import 'package:vitrine_project/userprofile.dart';
 
 class InstructorProfile extends StatelessWidget {
   @override
@@ -21,42 +24,7 @@ class InstructorProfile extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Padding(
-              padding: const EdgeInsets.only(top: 8.0),
-              child: Image.asset(
-                'images/book.png',
-                height: 20,
-                width: 20,
-              ),
-            ),
-            label: 'Courses',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              color: Colors.black,
-            ),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.search,
-              color: Colors.black,
-            ),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-              color: Colors.black,
-            ),
-            label: 'Profile',
-          ),
-        ],
-      ),
+      bottomNavigationBar: CustomBottomNavigationBar(),
       body: Column(
         children: [
           Container(
@@ -162,8 +130,8 @@ class ProfilePictureWidget extends StatelessWidget {
       height: 150.0,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Colors
-            .blue, // You can change the color or add a background image if needed
+        color: Color.fromARGB(255, 147, 160,
+            170), // You can change the color or add a background image if needed
       ),
       child: ClipOval(
         child: Image.asset(
@@ -187,7 +155,7 @@ class BoxWidget extends StatelessWidget {
       margin: EdgeInsets.all(8.0),
       width: 150.0, // Adjust the width of your box
       decoration: BoxDecoration(
-        color: Colors.blue, // Add your box color
+        color: Color.fromARGB(255, 190, 201, 209), // Add your box color
         borderRadius:
             BorderRadius.circular(10.0), // Adjust the radius as needed
       ),
@@ -234,7 +202,7 @@ class InfoBoxWidget extends StatelessWidget {
       padding: EdgeInsets.all(16.0),
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.blue,
+        color: Color.fromARGB(255, 197, 209, 219),
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: Column(
