@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vitrine_project/home.dart';
 import 'package:vitrine_project/navigationbar.dart';
-import 'package:vitrine_project/shared/barre_de_recherche.dart';
 
 class UserProfile extends StatelessWidget {
   @override
@@ -23,7 +22,7 @@ class UserProfile extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: CustomBottomNavigationBar(),
-      body: Column(
+      body: ListView(
         children: [
           Container(
             height: 50,
@@ -87,32 +86,31 @@ class UserProfile extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(
-            child: ListView.builder(
-              scrollDirection: Axis.vertical,
-              itemCount:
-                  10, // Replace with the actual number of pairs of boxes you want
-              itemBuilder: (context, index) {
-                return Row(
-                  children: [
-                    Expanded(
-                      child: BoxWidget(
-                        name: 'chess',
-                        imagePath: 'images/chess.jpg',
-                      ),
+          // Wrap the ListView.builder with an Expanded widget
+          ListView.builder(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            scrollDirection: Axis.vertical,
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return Row(
+                children: [
+                  Expanded(
+                    child: BoxWidget(
+                      name: 'chess',
+                      imagePath: 'images/chess.jpg',
                     ),
-                    SizedBox(
-                        width: 8.0), // Adjust the spacing between the boxes
-                    Expanded(
-                      child: BoxWidget(
-                        name: 'cooking',
-                        imagePath: 'images/cooking.jpg',
-                      ),
+                  ),
+                  SizedBox(width: 8.0), // Adjust the spacing between the boxes
+                  Expanded(
+                    child: BoxWidget(
+                      name: 'cooking',
+                      imagePath: 'images/cooking.jpg',
                     ),
-                  ],
-                );
-              },
-            ),
+                  ),
+                ],
+              );
+            },
           ),
         ],
       ),
@@ -132,8 +130,8 @@ class ProfilePictureWidget extends StatelessWidget {
       height: 150.0,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Colors
-            .blue, // You can change the color or add a background image if needed
+        color: Color.fromARGB(255, 212, 215,
+            218), // You can change the color or add a background image if needed
       ),
       child: ClipOval(
         child: Image.asset(
