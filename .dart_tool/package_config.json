@@ -116,6 +116,12 @@
       "languageVersion": "2.15"
     },
     {
+      "name": "http",
+      "rootUri": "file:///C:/Users/Asus/AppData/Local/Pub/Cache/hosted/pub.dev/http-1.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "http_parser",
       "rootUri": "file:///C:/Users/Asus/AppData/Local/Pub/Cache/hosted/pub.dev/http_parser-4.0.2",
       "packageUri": "lib/",
@@ -242,7 +248,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-12-10T11:08:25.679112Z",
+  "generated": "2024-01-07T10:26:50.779401Z",
   "generator": "pub",
   "generatorVersion": "3.2.3"
 }
