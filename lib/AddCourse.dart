@@ -136,8 +136,10 @@ class _AddCourseState extends State<AddCourse> {
                 ),
                 child: Center(
                   child: Image.asset(
-                    'images/book.png',
-                    width: 150, // Adjust the width of the image as needed
+                    'images/bearded-man-reading-book.jpg',
+                    width: MediaQuery.of(context)
+                        .size
+                        .width, // Adjust the width of the image as needed
                     height: 150, // Adjust the height of the image as needed
                     fit: BoxFit.contain,
                   ),
