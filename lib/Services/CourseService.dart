@@ -20,18 +20,27 @@ class CourseService {
     }
   }
 
-  Future<Course> addCourse(Course course) async {
-    final response = await http.post(
-      Uri.parse('$baseUrl/addCourse'),
-      headers: {'Content-Type': 'application/json'},
-      body: json.encode(course.toJson()),
-    );
-
-    if (response.statusCode == 200) {
-      return Course.fromJson(json.decode(response.body));
-    } else {
-      throw Exception('Failed to add course');
+  Future<http.Response> addCourse(Course course) async {
+    var response;
+    try {
+      var uri = Uri.parse('http://localhost:8080/api/courses/addCourse');
+      Map<String, String> headers = {"Content-Type": "application/json"};
+      /*final response = await http.post(
+        Uri.parse('$baseUrl/addCourse'),
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode(course.toJson()),
+      );*/
+      Map data = course.toJson();
+      var body = json.encode(data);
+      response = await http.post(uri, headers: headers, body: body);
+      if (response.statusCode != 202) {
+        throw Exception('Failed to ADD circuit breaker');
+      }
+    } catch (e) {
+      print("Error adding course: $e");
+      print(e);
     }
+    return response;
   }
 
   Future<Course?> findCourseById(String courseId) async {

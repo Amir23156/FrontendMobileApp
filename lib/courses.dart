@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vitrine_project/AddCourse.dart';
 import 'package:vitrine_project/navigationbar.dart';
 import 'package:vitrine_project/shared/barre_de_recherche.dart';
 
@@ -58,6 +59,20 @@ class CoursesPage extends StatelessWidget {
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Navigate to the AddCourse page when FloatingActionButton is pressed
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+                  AddCourse(), // Replace with your AddCourse page
+            ),
+          );
+        },
+        child: Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
