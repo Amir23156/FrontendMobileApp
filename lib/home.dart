@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
           Center(
             child: Container(
               margin: EdgeInsets.all(8.0),
-              width: double.infinity,
+              width: double.infinity, // Take the whole width
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10.0),
@@ -67,15 +67,15 @@ class _HomePageState extends State<HomePage> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(10.0),
                     child: Image.asset(
-                      'images/cooking.jpg',
-                      height: 100.0,
-                      width: 100.0,
+                      'images/Jamie-Oliver-Keep-Cooking-and-Carry-on-Channel-4 (1).jpg',
                       fit: BoxFit.cover,
+                      width: double.infinity, // Take the whole width
+                      height: 200.0, // Set the desired height
                     ),
                   ),
                   SizedBox(height: 8.0),
                   Text(
-                    'Course Name',
+                    'Cooking',
                     style: TextStyle(
                       fontSize: 16.0,
                       color: Colors.black,
@@ -112,9 +112,9 @@ class _HomePageState extends State<HomePage> {
                       borderRadius: BorderRadius.circular(10.0),
                       child: Image.asset(
                         'images/chess.jpg',
-                        height: 100.0,
-                        width: 100.0,
                         fit: BoxFit.cover,
+                        width: double.infinity, // Take half the width
+                        height: 100.0, // Set the desired height
                       ),
                     ),
                     SizedBox(height: 8.0),
@@ -142,9 +142,9 @@ class _HomePageState extends State<HomePage> {
                       borderRadius: BorderRadius.circular(10.0),
                       child: Image.asset(
                         'images/cooking.jpg',
-                        height: 100.0,
-                        width: 100.0,
                         fit: BoxFit.cover,
+                        width: double.infinity, // Take half the width
+                        height: 100.0, // Set the desired height
                       ),
                     ),
                     SizedBox(height: 8.0),
